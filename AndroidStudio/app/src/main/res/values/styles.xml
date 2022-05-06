@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.MiPrimerKotlin.EditTextStyle" parent="Theme.MiPrimerKotlin">
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:drawablePadding">12dp</item>
+    </style>
+
+    <style name="Theme.MiPrimerKotlin.Red" parent="Theme.MiPrimerKotlin">
+            <item name="android:background">@color/white</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+</resources>

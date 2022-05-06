@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.MiPrimerKotlin.Red"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -12,14 +13,13 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/titulo_activityMain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/Logo"
+                android:layout_below="@+id/profile_image"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:text="Bienvenido"
@@ -44,21 +44,20 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/marginTop"
                 android:drawableStart="@drawable/vector_person"
-                android:drawablePadding="12dp"
                 android:hint="@string/hint_usuario"
-                android:textAlignment="center" />
+                style="@style/Theme.MiPrimerKotlin.EditTextStyle"/>
 
             <EditText
                 android:id="@+id/contraseña"
                 android:layout_width="300dp"
-                android:drawableStart="@drawable/lock"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginTop"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/nombre"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/marginTop"
+                android:drawableStart="@drawable/lock"
                 android:hint="@string/hint_contraseña"
-                android:textAlignment="center"
-                android:inputType="numberPassword" />
+                android:inputType="numberPassword"
+                style="@style/Theme.MiPrimerKotlin.EditTextStyle"/>
 
             <Button
                 android:id="@+id/login"
@@ -76,14 +75,28 @@
                 android:textAlignment="center"
                 android:textColor="@color/black" />
 
-            <ImageView
-                android:id="@+id/Logo"
+            <include
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                layout="@layout/merge_logo"
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_below="@+id/Logomerge"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/marginTop"
-                android:src="@drawable/logo" />
+                android:src="@drawable/minions"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+
         </RelativeLayout>
     </ScrollView>
 
